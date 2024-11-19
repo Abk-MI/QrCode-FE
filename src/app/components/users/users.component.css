@@ -1,0 +1,22 @@
+mat-card {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 10px;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #3f51b5;
+    margin-bottom: 20px;
+  }
+  
