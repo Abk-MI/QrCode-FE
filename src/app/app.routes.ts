@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-//   { path: '', redirectTo: 'not-logged-in-users', pathMatch: 'full' },
+  { path: '', redirectTo: 'signup', pathMatch: 'full' },
 //   {
 //     path: 'not-logged-in-users',
 //     loadComponent: () => import('./components/not-logged-in-users/not-logged-in-users.component').then(m => m.NotLoggedInUsersComponent),
@@ -11,7 +11,7 @@ export const routes: Routes = [
     loadComponent: () => import('./components/users/users.component').then(m => m.UsersComponent),
   },
   {
-    path: 'add-user',
+    path: 'signup',
     loadComponent: () => import('./components/add-user/add-user.component').then(m => m.AddUserComponent),
   },
 //   {

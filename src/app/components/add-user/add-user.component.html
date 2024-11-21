@@ -1,22 +1,24 @@
-<mat-card>
-    <h2>Add User</h2>
+<div class="container">
+  <div class="form-container">
     <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
-      <mat-form-field appearance="fill" class="full-width">
-        <mat-label>First Name</mat-label>
-        <input matInput formControlName="firstName" />
-      </mat-form-field>
-  
-      <mat-form-field appearance="fill" class="full-width">
-        <mat-label>Last Name</mat-label>
-        <input matInput formControlName="lastName" />
-      </mat-form-field>
-  
-      <mat-form-field appearance="fill" class="full-width">
-        <mat-label>Email</mat-label>
-        <input matInput formControlName="email" />
-      </mat-form-field>
-  
-      <button mat-raised-button color="primary" type="submit">Add User</button>
+      <h1>Sign Up</h1>
+
+      <input type="text" formControlName="firstName" placeholder="First Name" />
+      <input type="text" formControlName="lastName" placeholder="Last Name" />
+      <input type="email" formControlName="email" placeholder="Email" />
+
+      <button type="submit" [disabled]="!userForm.valid">Sign Up</button>
     </form>
-  </mat-card>
-  
+    <div class="qr-code-container">
+      <qrcode
+        id="qrcodeElement"
+        #qrcodeElement
+        [qrdata]="qrcodedata"
+        [width]="256"
+        [errorCorrectionLevel]="'M'"
+        [allowEmptyString]="true"
+        (qrCodeURL)="onChangeURL($event)"
+      ></qrcode>
+    </div>
+  </div>
+</div>

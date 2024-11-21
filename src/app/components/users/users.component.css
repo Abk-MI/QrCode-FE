@@ -1,4 +1,4 @@
-mat-card {
+/* mat-card {
     margin: 20px auto;
     padding: 20px;
     max-width: 800px;
@@ -19,4 +19,92 @@ mat-card {
     color: #3f51b5;
     margin-bottom: 20px;
   }
-  
+   */
+
+   /* Style the entire mat-tab-group */
+mat-tab-group {
+  width: 100%;
+  background-color: #f4f4f9;  /* Light background for the tab container */
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the individual mat-tab headers */
+mat-tab-header {
+  background-color: #1976d2;  /* Primary blue color */
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px;
+}
+
+mat-tab-header .mat-tab-label {
+  text-transform: capitalize;  /* Capitalize the label text */
+}
+
+/* Style for the mat-tab content (table sections) */
+mat-tab {
+  padding: 20px;
+}
+
+/* Style the table */
+table.mat-elevation-z8 {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+/* Style the header cells */
+th.mat-header-cell {
+  background-color: #1976d2;  /* Blue background for headers */
+  color: white;
+  font-weight: bold;
+  padding: 12px 15px;
+  text-align: left;
+}
+
+/* Style the regular cells */
+td.mat-cell {
+  padding: 10px 15px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+/* Alternate row shading for better readability */
+tr.mat-row:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Hover effect for table rows */
+tr.mat-row:hover {
+  background-color: #f1f1f1;
+}
+
+/* Style the footer of the table (empty or any custom footer row) */
+tfoot.mat-footer-row {
+  background-color: #1976d2;
+  color: white;
+  font-weight: bold;
+}
+
+/* Optional: Adding margins to make the tables look neat */
+mat-tab table {
+  margin-top: 20px;
+}
+
+/* Styling for a specific table if needed */
+mat-tab[data-tab="users"] table {
+  background-color: #ffffff;
+}
+
+mat-tab[data-tab="present-users"] table {
+  background-color: #eaf1f8;
+}
+
+mat-tab[data-tab="absent-users"] table {
+  background-color: #f9f9f9;
+}
