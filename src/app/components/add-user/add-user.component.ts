@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -14,6 +14,7 @@ import { CommonModule } from '@angular/common';
 import { QRCodeModule } from 'angularx-qrcode';
 import { SafeUrl } from '@angular/platform-browser';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-add-user',
   standalone: true,
@@ -30,7 +31,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   templateUrl: './add-user.component.html',
   styleUrl: './add-user.component.css',
 })
-export class AddUserComponent {
+export class AddUserComponent implements OnInit {
   currentLang: string = 'fr';
   userForm: FormGroup;
   states = [
@@ -71,7 +72,8 @@ export class AddUserComponent {
     private fb: FormBuilder,
     private UsersService: UsersService,
     private snackBar: MatSnackBar,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private route: ActivatedRoute
   ) {
     this.translate.setDefaultLang('fr');
     this.userForm = this.fb.group({
@@ -79,6 +81,16 @@ export class AddUserComponent {
       lastName: ['', Validators.required],
       email: ['', Validators.required],
       state: ['', Validators.required],
+    });
+  }
+
+  ngOnInit(): void {
+    this.route.queryParams.subscribe((params) => {
+      if (['fr', 'ar'].includes(params['lang'])) {
+        this.currentLang = params['lang'];
+        this.translate.use(this.currentLang);
+        this.switchLanguage(this.currentLang);
+      }
     });
   }
 

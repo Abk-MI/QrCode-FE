@@ -11,7 +11,7 @@
     font-family: 'Montserrat', sans-serif;
     height: 100vh;
     margin: auto auto;
-    direction: ltr; /* Default for left-to-right languages */
+    direction: ltr;
   }
   
   h1 {
@@ -24,7 +24,7 @@
   }
   
   html[dir="rtl"] body {
-    direction: rtl; /* Right-to-left for Arabic */
+    direction: rtl;
   }
   
   
@@ -35,8 +35,6 @@
     flex-direction: column;
     padding: 0 50px;
     height: 100%;
-    
-    /* text-align: center; */
   }
   
   .container {
@@ -72,9 +70,6 @@
     width: 100%;
 }
 
-/*  */
-
-/* .heading-title will inherit text alignment from the language direction */
 .heading-title {
     color: #1D1A7C;
     border-bottom: 1px solid #e8e8e8;
@@ -89,7 +84,6 @@
     width: 100%;
 }
 
-/* The ::before pseudo-element spans the full width */
 .heading-container::before {
     content: "";
     position: absolute;
@@ -98,19 +92,17 @@
     bottom: -2px;
 }
 
-/* The ::after pseudo-element is smaller, and we position it */
 .heading-container::after {
     content: "";
     position: absolute;
     height: 2px;
     background-color: #1d1a7c;
     bottom: -2px;
-    width: 60px; /* Fixed width for the smaller line */
+    width: 60px; 
 }
 
 input, select {
     background-color: #F6F7FA;
-    /* border-color: #EAECF1; */
     border: 1px solid #a3a5a8;
     border-radius: 5px;
     padding: 12px 15px;
@@ -154,78 +146,7 @@ input:focus {
 .container button:disabled {
     opacity: 0.7;
 }
-
-/* Container for the language switcher */
-.language-switcher {
-    position: absolute;
-    z-index: 99;
-    width: 100%;
-    display: flex;
-    justify-content: center;  /* Center the radio buttons horizontally */
-    gap: 20px;  /* Space between the radio buttons */
-    margin-top: 20px;  /* Space above the switcher */
-  }
   
-  /* Style each radio button label */
-  .language-option {
-    display: flex;
-    align-items: center;  /* Vertically center the radio button with the text */
-    font-size: 16px;  /* Font size for the labels */
-    cursor: pointer;  /* Change cursor to pointer */
-    padding: 10px 15px;  /* Add padding around the label */
-    border-radius: 25px;  /* Rounded corners for the label */
-    transition: background-color 0.3s ease;  /* Smooth background transition */
-  }
-  
-  /* Hover effect on label */
-  .language-option:hover {
-    background-color: #f0f0f0;  /* Light background when hovering */
-  }
-  
-  /* Style the radio button itself */
-  .language-option input[type="radio"] {
-    display: none;  /* Hide the default radio button */
-  }
-  
-  /* Custom radio button design */
-  .language-option input[type="radio"] + span {
-    width: 20px;  /* Size of the radio button */
-    height: 20px;
-    border-radius: 50%;  /* Circular shape */
-    border: 2px solid #1d1a7c;  /* Border color */
-    margin-right: 10px;  /* Space between radio button and text */
-    display: inline-block;
-    position: relative;
-    transition: background-color 0.3s ease;  /* Smooth background transition */
-  }
-  
-  /* When the radio button is checked, add background color */
-  .language-option input[type="radio"]:checked + span {
-    background-color: #1D1A7C;  /* Selected color */
-  }
-  
-  /* Add a checkmark inside the circle when selected */
-  .language-option input[type="radio"]:checked + span::after {
-    content: "";
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 10px;
-    height: 10px;
-    background-color: white;  /* Checkmark color */
-    border-radius: 50%;
-  }
-  
-  /* Adjust text alignment based on language direction */
-  html[dir="ltr"] .language-switcher {
-    text-align: left;  /* Left-align for LTR languages like French */
-  }
-  
-  html[dir="rtl"] .language-switcher {
-    text-align: right;  /* Right-align for RTL languages like Arabic */
-  }
-  
-  /* Add a little spacing between the radio buttons for better readability */
   .language-switcher label {
     display: flex;
     align-items: center;
@@ -242,7 +163,6 @@ input:focus {
     font-size: 12px;
   }
   
-  /* Checkbox checked state */
   .checkbox-option input[type="checkbox"]:checked {
     background-color: #007bff;
     border-color: #0056b3;
