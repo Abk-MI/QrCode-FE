@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { SafeUrl } from '@angular/platform-browser';
 
 @Injectable({
   providedIn: 'root',
@@ -37,13 +36,12 @@ export class UsersService {
       firstName: string;
       lastName: string;
       email: string;
+      state: string;
     },
-    qrcode: any
+    qrcode: any,
+    currentLang: string
   ): Observable<any> {
-    console.log(qrcode.toString());
-    console.log(qrcode);
-
-    const data = { ...user, qrcode: qrcode.toString() };
+    const data = { ...user, qrcode: qrcode.toString(), lang: currentLang };
     return this.http.post(`${this.baseUrl}/user`, data);
   }
 

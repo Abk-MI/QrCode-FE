@@ -1,13 +1,76 @@
+<div class="language-switcher">
+  <label class="language-option">
+    <input
+      type="radio"
+      name="language"
+      value="fr"
+      (change)="switchLanguage('fr')"
+      [checked]="currentLang === 'fr'"
+    />
+    <span></span>
+    <!-- Custom radio button circle -->
+    Français
+  </label>
+
+  <label class="language-option">
+    <input
+      type="radio"
+      name="language"
+      value="ar"
+      (change)="switchLanguage('ar')"
+      [checked]="currentLang === 'ar'"
+    />
+    <span></span>
+    <!-- Custom radio button circle -->
+    عربي
+  </label>
+</div>
+
 <div class="container">
   <div class="form-container">
     <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
-      <h1>Sign Up</h1>
+      <div class="heading-container">
+        <h1 class="heading-title">{{ "form.heading" | translate }}</h1>
+      </div>
 
-      <input type="text" formControlName="firstName" placeholder="First Name" />
-      <input type="text" formControlName="lastName" placeholder="Last Name" />
-      <input type="email" formControlName="email" placeholder="Email" />
+      <input
+        type="text"
+        formControlName="firstName"
+        [placeholder]="'form.firstName' | translate"
+      />
+      <input
+        type="text"
+        formControlName="lastName"
+        [placeholder]="'form.lastName' | translate"
+      />
+      <input
+        type="email"
+        formControlName="email"
+        [placeholder]="'form.email' | translate"
+      />
 
-      <button type="submit" [disabled]="!userForm.valid">Sign Up</button>
+      <select formControlName="state" name="Gouvernorat" id="Gouvernorat">
+        <option value="">{{ "form.gouvernorat" | translate }}</option>
+        <option *ngFor="let gouvernorat of states" [value]="gouvernorat.fr">
+          {{ currentLang === "fr" ? gouvernorat.fr : gouvernorat.ar }}
+        </option>
+      </select>
+
+      <!-- Accept Login Checkbox -->
+      <label class="checkbox-option">
+        <input type="checkbox" />
+        {{ "form.accept_receive_information" | translate }}
+      </label>
+
+      <!-- Accept Privacy Checkbox -->
+      <label class="checkbox-option">
+        <input type="checkbox" /> {{ "form.accept_newsletter" | translate }}
+        <a href="http://Wefranchiz.com" target="_blank">Wefranchiz.com</a>
+      </label>
+
+      <button type="submit" [disabled]="!userForm.valid">
+        {{ "form.submit" | translate }}
+      </button>
     </form>
     <div class="qr-code-container">
       <qrcode

@@ -1,0 +1,12 @@
+{
+  "form": {
+    "heading": "التسجيل",
+    "firstName": "الاسم",
+    "lastName": "اللقب",
+    "email": "البريد الإلكتروني",
+    "gouvernorat": "الولاية",
+    "submit": "تسجيل",
+    "accept_receive_information": "أرغب في الحصول على مزيد من المعلومات حول العرض في المعرض",
+    "accept_newsletter": "أوافق على تلقي الإخبار من"
+  }
+}

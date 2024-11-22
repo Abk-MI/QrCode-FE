@@ -1,0 +1,12 @@
+{
+  "form": {
+    "heading": "Inscription",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "email": "Email",
+    "gouvernorat": "Gouvernorat",
+    "submit": "Inscription",
+    "accept_receive_information": "Je souhaite recevoir plus d'informations pour exposer au salon",
+    "accept_newsletter": "J'accepte de recevoir la newsletter de "
+  }
+}

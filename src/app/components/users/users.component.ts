@@ -11,7 +11,21 @@ import { MaterialModule } from '../../material.module';
   styleUrl: './users.component.css',
 })
 export class UsersComponent {
-  displayedColumns: string[] = ['id', 'firstName', 'lastName', 'email'];
+  displayedColumns: string[] = [
+    'id',
+    'firstName',
+    'lastName',
+    'email',
+    'state',
+  ];
+  displayedPresentColumns: string[] = [
+    'id',
+    'firstName',
+    'lastName',
+    'email',
+    'state',
+    'date',
+  ];
   dataSource: any[] = [];
   dataSourcePresent: any[] = [];
   dataSourceAbsent: any[] = [];

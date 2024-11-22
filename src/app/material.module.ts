@@ -6,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   imports: [
@@ -16,8 +17,10 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatCardModule,
     MatSnackBarModule,
     MatTabsModule,
+    MatSelectModule,
   ],
   exports: [
+    MatSelectModule,
     MatTableModule,
     MatToolbarModule,
     MatButtonModule,
