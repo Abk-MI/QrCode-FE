@@ -6,8 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class UsersService {
-  private baseUrl = 'https://qr-code-steps.vercel.app';
+  // private baseUrl = 'https://qr-code-steps.vercel.app';
   // private baseUrl = 'http://localhost:3000';
+  private baseUrl = 'http://51.254.123.23:3000';
 
   constructor(private http: HttpClient) {}
 
